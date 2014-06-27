@@ -6,7 +6,6 @@
 
 package ej1;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -22,9 +21,9 @@ public class Ej1 {
         // TODO code application logic here
     Scanner entrada=new Scanner(System.in);
     
-    ArrayList<String> elemX= new ArrayList<String>();
-    ArrayList<String> elemY= new ArrayList<String>();
-        
+    int [] f1=new int[255];
+    int [] f2=new int[255];
+    int [] result=new int [255]  ;      
     System.out.println("Ingrese el Valor de X:");
     int x=entrada.nextInt();
     
@@ -38,23 +37,44 @@ public class Ej1 {
         else
         {
             
-         int n1=6;
+         int n1=6,h=6,j=0,k=0;
          
-            
-             
+   
+
         
     
-        for (int i = n1; i==255; i++) 
+        for (int i = 0; i<=f1.length; i++) 
         {
-            String h=String.valueOf(i);
-            elemX.add(h);
+            f1[i]=n1;
+            //System.out.println(f1[i]);
+           
+            n1++;
+                       
+            f2[i]=h;
+            h--;
+            
         }
+        for (int i = 0; i==result.length; i++) {
+            if (i%2==0) 
+            {
+               result[i]=f2[j];
+               j=j+2;
+            }else
+            {
+            result[i]=f1[k];
+            k++;
+            }
+            System.out.println(result[i]);
+        }
+            for (int num:result)
+            {
+                System.out.println(num); 
+                
+                
+            }
+            
         
         
-        for (int i =0; i <= elemX.size(); i++) 
-        {
-            System.out.printf("%s", elemX.get(i));
-        }
         }
     }
     
